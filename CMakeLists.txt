@@ -11,3 +11,6 @@ catkin_package()
 
 install(PROGRAMS scripts/set_xtion_dyn_params.py scripts/__init__.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
