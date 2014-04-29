@@ -14,3 +14,6 @@ install(PROGRAMS scripts/set_xtion_dyn_params.py scripts/__init__.py
 
 install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
+  
+install(DIRECTORY config/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config)
