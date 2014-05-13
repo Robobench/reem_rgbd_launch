@@ -12,7 +12,7 @@ We must lower the quantity of data sent.
 """
 
 import rospy
-from dynamic_reconfigure import client
+from dynamic_reconfigure import client, DynamicReconfigureParameterException
 
 
 if __name__=='__main__':
@@ -20,8 +20,12 @@ if __name__=='__main__':
     rospy.loginfo("Trying to connect a service client to head_mount_xtion dynamic reconfigure...")
     client = client.Client("/head_mount_xtion")
     rospy.loginfo("Got a client! Setting parameters.")
-    params = { 'imager_rate:' : 1.0 } # drop rate
-    config = client.update_configuration(params)
+    try:
+        config = client.update_configuration({'imager_rate' : 1.0})
+    except DynamicReconfigureParameterException:
+        rospy.sleep(5)  # Giving some time to catch up with simulation startup
+        config = client.update_configuration({'imager_rate' : 1.0})
+
     # check if it was really set
     
     rospy.loginfo("Parameters set: " + str(config))
