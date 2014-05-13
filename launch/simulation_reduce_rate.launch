@@ -2,8 +2,6 @@
 <launch>
 
   	<!-- reduce pointcloud generation in simulation -->
- <node pkg="dynamic_reconfigure" type="dynparam" name="set_xtion_dyn_params" 
- 	args='set /head_mount_xtion imager_rate 1.0'
- 	output="screen" />
+	<node pkg="reem_rgbd_launch" type="set_simulated_xtion_dyn_params.py" name="set_simulated_xtion_dyn_params" output="screen" />
 
 </launch>

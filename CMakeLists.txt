@@ -9,7 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package()
 
-install(PROGRAMS scripts/set_xtion_dyn_params.py scripts/__init__.py
+install(PROGRAMS scripts/set_xtion_dyn_params.py scripts/__init__.py scripts/set_simulated_xtion_dyn_params.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(DIRECTORY launch/
