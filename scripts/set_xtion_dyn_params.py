@@ -20,7 +20,7 @@ if __name__=='__main__':
     rospy.loginfo("Trying to connect a service client to head_mount_xtion dynamic reconfigure...")
     client = client.Client("/head_mount_xtion/driver") # xtion node
     rospy.loginfo("Got a client! Setting parameters.")
-    params = { 'data_skip' : 10, 'ir_mode' : 6, 'color_mode': 6, 'depth_mode' : 6 } # drop rate
+    params = { 'data_skip' : 4, 'ir_mode' : 6, 'color_mode': 6, 'depth_mode' : 6 } # drop rate
     config = client.update_configuration(params)
     # check if it was really set
     
